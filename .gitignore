@@ -12,9 +12,9 @@ wheels/
 
 # Redundant Files
 asset/documentation/
-asset/data/Sample_Game_1/
-asset/data/Sample_Game_2/
-asset/data/Sample_Game_3/
+asset/raw_data/Sample_Game_1/
+asset/raw_data/Sample_Game_2/
+asset/raw_data/Sample_Game_3/
 asset/README.md
 
 .idea
