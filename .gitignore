@@ -19,3 +19,7 @@ asset/README.md
 
 .idea
 .DS_Store
+/asset/test.ipynb
+
+# Large csv file
+*.csv

@@ -120,8 +120,8 @@ class Player(Entity):
         influence_radius = self.influence_radius(self.distance_to_ball(ball))
         sx = influence_radius + np.multiply(scale, influence_radius)
         sy = influence_radius - np.multiply(scale, influence_radius)
-        S = np.array([[sx, 0],
-                      [0, sy]]).reshape(2, 2)
+        S = np.array([[sx*0.7, 0],
+                      [0, sy*0.7]]).reshape(2, 2)
         COV = np.linalg.multi_dot([R, S, S, np.linalg.inv(R)])
         mu = (self.position + self.velocity.vec_len * np.float32(0.5)).to_numpy().reshape(2, 1)
 

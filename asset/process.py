@@ -22,10 +22,25 @@ def generate_game1_csv(path: str, file_name: str):
     df_player = df_player.rename(dict(zip(df_player.columns, new_names)))
     df_ball = df_ball.rename({"_duplicated_13": "Ball_y", "Ball": "Ball_x"})
     df = pl.concat([df_player, df_ball], how="horizontal")
+
+    #compute velocity
+    col_names = df.columns
+    col_names.remove("Period")
+    col_names.remove("Frame")
+    col_names.remove("Time [s]")
+
+    df = df.with_columns([
+        ((pl.col(c) - pl.col(c).shift(1) ) / 0.04)
+        .round(5)
+        .fill_null(0)
+        .alias(f"{c}_v")
+        for c in col_names
+    ])
+
     df.write_csv(f"../{file_name}")
 
 if __name__ == "__main__":
     generate_game1_csv("raw_data/Sample_Game_1/Sample_Game_1_RawTrackingData_Home_Team.csv",
-                 "Game1_home_tracking.csv")
+                 "./asset/Game1_home_tracking.csv")
     generate_game1_csv("raw_data/Sample_Game_1/Sample_Game_1_RawTrackingData_Away_Team.csv",
-                 "Game1_away_tracking.csv")
+                 "./asset/Game1_away_tracking.csv")
