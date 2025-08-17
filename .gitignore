@@ -22,4 +22,4 @@ asset/README.md
 /asset/test.ipynb
 
 # Large csv file
-*.csv
+asset/*.csv
