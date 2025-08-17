@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+
+# Redundant Files
+asset/documentation/
+asset/data/Sample_Game_1/
+asset/data/Sample_Game_2/
+asset/data/Sample_Game_3/
+asset/README.md
+
+.idea
+.DS_Store
