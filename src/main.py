@@ -1,6 +1,5 @@
 def main():
-    print("Hello from football-viewer!")
-
+    print("Hello from football_viewer.")
 
 if __name__ == "__main__":
     main()

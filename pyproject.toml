@@ -11,4 +11,5 @@ dependencies = [
     "nuitka>=2.7.12",
     "numpy>=2.3.2",
     "polars>=1.32.3",
+    "shapely>=2.1.1",
 ]
